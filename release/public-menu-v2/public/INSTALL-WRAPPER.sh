@@ -58,7 +58,7 @@ readonly script="$bootstrap_dir/install-server-toolkit-1.0.0.sh"
   --fail --silent --show-error --max-redirs 0 --connect-timeout 10 --max-time 30 \
   --max-filesize 34915 --output "$script" "$BASE/install-server-toolkit-1.0.0.sh"
 [[ "$(/usr/bin/stat -c '%u:%g:%a:%h:%s' -- "$script")" == '0:0:600:1:34915' ]] || exit 1
-printf '%s  %s\n' 'd9cb02a353dfd822b99c6b4b23a118c7bc4c4dc91099bf8dbd91325fce6974a0' "$script" | /usr/bin/sha256sum -c -
+printf '%s  %s\n' '5cad28f389b4db33ce0c72a76030e793543e1b77a19d1b30ecd605b19702bf75' "$script" | /usr/bin/sha256sum -c -
 /bin/chown root:root "$script"
 /bin/chmod 0700 "$script"
 [[ "$(/usr/bin/stat -c '%u:%g:%a:%h:%s' -- "$script")" == '0:0:700:1:34915' ]] || exit 1
@@ -72,7 +72,7 @@ if [[ ! -x /usr/bin/pgrep ]]; then
   printf 'ERROR: pgrep is unavailable.\n' >&2
   rc=1
 else
-  /usr/bin/pgrep -f -- "$bootstrap_dir|/usr/local/bin/server-toolkit|/usr/local/bin/server-toolkit-audit-v1|/usr/local/lib/server-toolkit|/usr/local/lib/\.server-toolkit-txn-00f37b3b4ef5|/usr/local/bin/\.server-toolkit-txn-00f37b3b4ef5" >/dev/null 2>&1
+  /usr/bin/pgrep -f -- "$bootstrap_dir|/usr/local/bin/server-toolkit|/usr/local/bin/server-toolkit-audit-v1|/usr/local/lib/server-toolkit|/usr/local/lib/\.server-toolkit-txn-33094a242a92|/usr/local/bin/\.server-toolkit-txn-33094a242a92" >/dev/null 2>&1
   pgrep_rc=$?
   case "$pgrep_rc" in
     0) printf 'ERROR: installer process residue detected.\n' >&2; rc=1 ;;
@@ -84,11 +84,11 @@ set -e
 
 if (( rc == 0 )); then
   for path in \
-    /usr/local/lib/.server-toolkit-txn-00f37b3b4ef5 \
-    /usr/local/bin/.server-toolkit-txn-00f37b3b4ef5-server-toolkit \
-    /usr/local/bin/.server-toolkit-txn-00f37b3b4ef5-server-toolkit-audit-v1 \
-    /usr/local/bin/.server-toolkit-txn-00f37b3b4ef5-server-toolkit.sha256 \
-    /usr/local/bin/.server-toolkit-txn-00f37b3b4ef5-server-toolkit-audit-v1.sha256; do
+    /usr/local/lib/.server-toolkit-txn-33094a242a92 \
+    /usr/local/bin/.server-toolkit-txn-33094a242a92-server-toolkit \
+    /usr/local/bin/.server-toolkit-txn-33094a242a92-server-toolkit-audit-v1 \
+    /usr/local/bin/.server-toolkit-txn-33094a242a92-server-toolkit.sha256 \
+    /usr/local/bin/.server-toolkit-txn-33094a242a92-server-toolkit-audit-v1.sha256; do
     if [[ -e "$path" || -L "$path" ]]; then
       printf 'ERROR: install transaction residue remains: %s\n' "$path" >&2
       rc=1

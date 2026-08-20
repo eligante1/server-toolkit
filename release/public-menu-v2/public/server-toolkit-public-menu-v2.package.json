@@ -2,28 +2,28 @@
   "archive_root": "server-toolkit-public-menu-v2",
   "artifacts": {
     "base64": {
-      "bytes": 214818,
+      "bytes": 215941,
       "encoding": "base64-rfc4648-lines-76",
       "name": "server-toolkit-public-menu-v2.tar.gz.b64",
-      "sha256": "eedd63793cf4a407e12e071ba1395250269902259be4f15ca2f9322c3b18532d"
+      "sha256": "d3fd8fdd053927f718878f58094ee970266d226bc0464e402d28e2dc6fd57c93"
     },
     "tar_gz": {
-      "bytes": 159019,
+      "bytes": 159851,
       "format": "ustar+gzip",
       "name": "server-toolkit-public-menu-v2.tar.gz",
-      "sha256": "c01f90fa0c5f28bcbe0c5c33e2743730389af9179ea7220a17337bbbfd932862"
+      "sha256": "ea89220ea514f0f403a1049da0e2e539f10d4baa5993299c6a18ab9fb81fb191"
     }
   },
   "bundle_evidence": {
     "manifest": {
       "bytes": 9676,
       "path": "MANIFEST.json",
-      "sha256": "8d5d1af1eebf9c2a4d8add03bf658d821825501802afb1648afeda771113aedd"
+      "sha256": "7c6ad7d8a122806a4a7fda4cc7dcfcd79770f0832dc3aa1dedb8c7e585d2a558"
     },
     "sha256sums": {
       "bytes": 3975,
       "path": "SHA256SUMS",
-      "sha256": "b3ee90010226a103e28c9c98bedec608fccec59726c0ab165eb2c237fcd37623"
+      "sha256": "55be286708b368c6c87d5e783744739ba0264764c9eb2bd094bbc8ec3a566651"
     }
   },
   "members": [
@@ -94,7 +94,7 @@
       "mode": "0644",
       "mtime": 0,
       "path": "server-toolkit-public-menu-v2/MANIFEST.json",
-      "sha256": "8d5d1af1eebf9c2a4d8add03bf658d821825501802afb1648afeda771113aedd",
+      "sha256": "7c6ad7d8a122806a4a7fda4cc7dcfcd79770f0832dc3aa1dedb8c7e585d2a558",
       "type": "file",
       "uid": 0,
       "uname": "root"
@@ -106,7 +106,7 @@
       "mode": "0644",
       "mtime": 0,
       "path": "server-toolkit-public-menu-v2/SHA256SUMS",
-      "sha256": "b3ee90010226a103e28c9c98bedec608fccec59726c0ab165eb2c237fcd37623",
+      "sha256": "55be286708b368c6c87d5e783744739ba0264764c9eb2bd094bbc8ec3a566651",
       "type": "file",
       "uid": 0,
       "uname": "root"
@@ -118,7 +118,7 @@
       "mode": "0644",
       "mtime": 0,
       "path": "server-toolkit-public-menu-v2/usr/local/bin/server-toolkit",
-      "sha256": "d42890704fe40a3b896c863957985a238feab345dfeb46fc1a6c74d4b3006c27",
+      "sha256": "8996742f4d20c68577fa1a3e70651e019be8ceb53e3dbb1dea4127c83e94267e",
       "type": "file",
       "uid": 0,
       "uname": "root"
@@ -154,7 +154,7 @@
       "mode": "0644",
       "mtime": 0,
       "path": "server-toolkit-public-menu-v2/usr/local/bin/server-toolkit.sha256",
-      "sha256": "57b3b10c21d4df92f54d3f97066cbec69bcd5dc755cf6e6b209ae0f6bbdac108",
+      "sha256": "d2db713762017c5f5bf8c71c099b33d97f4cdf5b59a8aaa762a49d7219c1135e",
       "type": "file",
       "uid": 0,
       "uname": "root"
@@ -256,13 +256,13 @@
       "uname": "root"
     },
     {
-      "bytes": 86044,
+      "bytes": 88080,
       "gid": 0,
       "gname": "root",
       "mode": "0644",
       "mtime": 0,
       "path": "server-toolkit-public-menu-v2/usr/local/lib/server-toolkit/progress-0.4.1-rc4-round2.sh",
-      "sha256": "396cbdcb4ecab30635e880e77a5a053173a43af6a209d7b86bdf5ff3f65b7bd6",
+      "sha256": "9fc4122a24d3479513cd6c604976691a1ebdd7f3b69c12574b735828cae57a09",
       "type": "file",
       "uid": 0,
       "uname": "root"
@@ -274,7 +274,7 @@
       "mode": "0644",
       "mtime": 0,
       "path": "server-toolkit-public-menu-v2/usr/local/lib/server-toolkit/progress-0.4.1-rc4-round2.sh.sha256",
-      "sha256": "fd3b582bd2db535d5154537e974cf82d1dac77f9d579ba6341772b4e40cdd8df",
+      "sha256": "47a1030082cbab424bcff733851a44c5d5cb551acb2f9dfc089ad26fac1468f6",
       "type": "file",
       "uid": 0,
       "uname": "root"
@@ -310,7 +310,7 @@
       "mode": "0644",
       "mtime": 0,
       "path": "server-toolkit-public-menu-v2/usr/local/lib/server-toolkit/public-menu-dispatcher-v2.sh",
-      "sha256": "7d903501eaba54d477b8c8ddfcff672306ac8a6e9429b5c6967656c587c4f0a3",
+      "sha256": "3195114e7eda8480b2b5c10ff20af6410b13c17293a2c86d210d6dc35d234094",
       "type": "file",
       "uid": 0,
       "uname": "root"
@@ -322,7 +322,7 @@
       "mode": "0644",
       "mtime": 0,
       "path": "server-toolkit-public-menu-v2/usr/local/lib/server-toolkit/public-menu-dispatcher-v2.sh.sha256",
-      "sha256": "3f7b3b51acf51e1ad56b39aa0dbe3ba6338520e152d42df3155035f74d05bfa2",
+      "sha256": "2758fd3de147de14d848ce3f5f74e10f479b5a3a96fd70588d55c70aa3920f6c",
       "type": "file",
       "uid": 0,
       "uname": "root"
@@ -352,13 +352,13 @@
       "uname": "root"
     },
     {
-      "bytes": 476403,
+      "bytes": 478636,
       "gid": 0,
       "gname": "root",
       "mode": "0644",
       "mtime": 0,
       "path": "server-toolkit-public-menu-v2/usr/local/lib/server-toolkit/server-toolkit-audit-v1.sh",
-      "sha256": "3c944a03f2ef9878843218895d7335eca2210b2c6f7a0d7a13dceaa2e1b87c30",
+      "sha256": "cbae326aab0e1b21f4fa8b961a328af544ed4677a19c954cc531d25ffeff8f01",
       "type": "file",
       "uid": 0,
       "uname": "root"
@@ -370,7 +370,7 @@
       "mode": "0644",
       "mtime": 0,
       "path": "server-toolkit-public-menu-v2/usr/local/lib/server-toolkit/server-toolkit-audit-v1.sh.sha256",
-      "sha256": "19b1baa5286db1cc8661b4606b0581b98c526c8819c0fc1d6b1341ba9dfd3acf",
+      "sha256": "eedb087d68c2deebe6e23583ecf1b42ed2c8660a287744a40e12ffb9cfe6b0b1",
       "type": "file",
       "uid": 0,
       "uname": "root"
