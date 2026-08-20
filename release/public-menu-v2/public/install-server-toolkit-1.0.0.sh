@@ -98,17 +98,22 @@ readonly SELF_IDENTITY
 
 readonly PRODUCT_VERSION='1.0.0'
 readonly PACKAGE_NAME='server-toolkit-public-menu-v2.tar.gz.b64'
-readonly EXPECTED_B64_SHA256='189390ebc8c95a7c42c29d0daf4acfc3a5f8710a72f194da78e3d6aaab3b23fc'
-readonly EXPECTED_B64_BYTES='216014'
-readonly EXPECTED_ARCHIVE_SHA256='1fd91e74fed96797fad29a9d66b6191ac2ea6cf10032ccab7222ce93ca79a097'
-readonly EXPECTED_ARCHIVE_BYTES='159904'
-readonly EXPECTED_MANIFEST_SHA256='dcc24d299c1c33e87da0cadcc0321a6f6f45c3997404d5fb23f20a8e737a0528'
-readonly EXPECTED_INTERNAL_SUMS_SHA256='ac7fb954b6ac5e2f9a0b28d3a98bffa2dcb08859b2f71a541bf7bc08abcf4041'
-readonly EXPECTED_LAUNCHER_SHA256='32ba3bba0104e22f59b1026f6a131d26eec1dbb16a61f1c8eaeaae50943a8ed9'
+readonly EXPECTED_B64_SHA256='2d7725036b03662c24f3326dbb8d968398fb505b5794df5c25cc9bd290cdb4c1'
+readonly EXPECTED_B64_BYTES='219009'
+readonly EXPECTED_ARCHIVE_SHA256='8f12fdcc3976d867e1ac5ef63a46841cc07178ad3baf49271f1321cae326a302'
+readonly EXPECTED_ARCHIVE_BYTES='162123'
+readonly EXPECTED_MANIFEST_SHA256='6bbb17b5b4c841fbbd44710fb71e606563a5bf36aa65c7f60c815268c3cb12a8'
+readonly EXPECTED_INTERNAL_SUMS_SHA256='e5d0aa83ede4c113b0f4d23971b44f2a0a368ad37dd4cdc643117535353cd4c1'
+readonly EXPECTED_LAUNCHER_SHA256='c19cc1df9d809c7f057c639ae97fd31501672c06e71225870c17e47765edc2c0'
+readonly UNINSTALL_SCRIPT_NAME='uninstall-server-toolkit-1.0.0.sh'
+readonly EXPECTED_UNINSTALL_SCRIPT_SHA256='d95de1ff70bef633c32ce16d7ebb2a74e7c92b58387cdf012f471111e524e98b'
+readonly EXPECTED_UNINSTALL_SCRIPT_BYTES='56548'
 
 readonly INSTALL_LIB_DIR='/usr/local/lib/server-toolkit'
-readonly TRANSACTION_LIB_DIR='/usr/local/lib/.server-toolkit-txn-fda2b665753e'
+readonly TRANSACTION_LIB_DIR='/usr/local/lib/.server-toolkit-txn-3cdd28b08316'
 readonly MAIN_LAUNCHER='/usr/local/bin/server-toolkit'
+readonly INSTALLED_UNINSTALL_SCRIPT='/usr/local/lib/server-toolkit/uninstall-server-toolkit-1.0.0.sh'
+readonly INSTALLED_UNINSTALL_CONFIG='/usr/local/lib/server-toolkit/uninstall-source-v1.conf'
 readonly LIB_FILE_COUNT=26
 
 readonly -a INSTALL_RELATIVE=(
@@ -179,36 +184,36 @@ readonly -a INSTALL_DESTINATION=(
 
 # Same-filesystem transaction names are derived from the frozen manifest.
 readonly -a INSTALL_TRANSACTION=(
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/server-toolkit-audit-v1.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/server-toolkit-audit-v1.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/public-menu-controller-v2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/public-menu-controller-v2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/public-menu-dispatcher-v2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/public-menu-dispatcher-v2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/sonar-presentation-0.4.1-rc4-round2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/sonar-presentation-0.4.1-rc4-round2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/server-toolkit-quick-v2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/server-toolkit-quick-v2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/server-toolkit-last-report-v2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/server-toolkit-last-report-v2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/progress-0.4.1-rc4-round2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/progress-0.4.1-rc4-round2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/platform-compatibility-0.4.1-rc4-round2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/platform-compatibility-0.4.1-rc4-round2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/pressure-diagnostics-0.4.1-rc4-round2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/pressure-diagnostics-0.4.1-rc4-round2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/storage-diagnostics-0.4.1-rc4-round2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/storage-diagnostics-0.4.1-rc4-round2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/application-service-diagnostics-0.4.1-rc4-round2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/application-service-diagnostics-0.4.1-rc4-round2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/failed-services-policy-0.4.1-rc4-round2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/failed-services-policy-0.4.1-rc4-round2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/quick-check-classifier-v2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/quick-check-classifier-v2.sh.sha256'
-  '/usr/local/bin/.server-toolkit-txn-fda2b665753e-server-toolkit-audit-v1.sha256'
-  '/usr/local/bin/.server-toolkit-txn-fda2b665753e-server-toolkit.sha256'
-  '/usr/local/bin/.server-toolkit-txn-fda2b665753e-server-toolkit-audit-v1'
-  '/usr/local/bin/.server-toolkit-txn-fda2b665753e-server-toolkit'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/server-toolkit-audit-v1.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/server-toolkit-audit-v1.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/public-menu-controller-v2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/public-menu-controller-v2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/public-menu-dispatcher-v2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/public-menu-dispatcher-v2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/sonar-presentation-0.4.1-rc4-round2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/sonar-presentation-0.4.1-rc4-round2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/server-toolkit-quick-v2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/server-toolkit-quick-v2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/server-toolkit-last-report-v2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/server-toolkit-last-report-v2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/progress-0.4.1-rc4-round2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/progress-0.4.1-rc4-round2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/platform-compatibility-0.4.1-rc4-round2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/platform-compatibility-0.4.1-rc4-round2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/pressure-diagnostics-0.4.1-rc4-round2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/pressure-diagnostics-0.4.1-rc4-round2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/storage-diagnostics-0.4.1-rc4-round2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/storage-diagnostics-0.4.1-rc4-round2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/application-service-diagnostics-0.4.1-rc4-round2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/application-service-diagnostics-0.4.1-rc4-round2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/failed-services-policy-0.4.1-rc4-round2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/failed-services-policy-0.4.1-rc4-round2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/quick-check-classifier-v2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/quick-check-classifier-v2.sh.sha256'
+  '/usr/local/bin/.server-toolkit-txn-3cdd28b08316-server-toolkit-audit-v1.sha256'
+  '/usr/local/bin/.server-toolkit-txn-3cdd28b08316-server-toolkit.sha256'
+  '/usr/local/bin/.server-toolkit-txn-3cdd28b08316-server-toolkit-audit-v1'
+  '/usr/local/bin/.server-toolkit-txn-3cdd28b08316-server-toolkit'
 )
 
 readonly -a INSTALL_MODE=(
@@ -255,6 +260,9 @@ declare -a OWNED_ACTIVE=()
 declare -a INSTALL_CLAIM_INDEX=()
 declare -a INSTALL_EXPECTED_HASH=()
 LAST_CLAIM_INDEX=''
+UNINSTALL_CONFIG_CLAIM_INDEX=''
+UNINSTALL_SCRIPT_CLAIM_INDEX=''
+UNINSTALL_CONFIG_SHA256=''
 
 die() {
   printf 'ERROR: %s\n' "$*" >&2
@@ -577,6 +585,8 @@ scratch_identity="$(stat_full_identity "$scratch")" || die 'cannot record privat
 readonly B64_PATH="$scratch/$PACKAGE_NAME"
 readonly ARCHIVE_PATH="$scratch/server-toolkit-public-menu-v2.tar.gz"
 readonly EXTRACT_DIR="$scratch/extracted"
+readonly UNINSTALL_SCRIPT_SOURCE="$scratch/$UNINSTALL_SCRIPT_NAME"
+readonly UNINSTALL_CONFIG_SOURCE="$scratch/uninstall-source-v1.conf"
 downloaded_bytes="$({
   /usr/bin/env -i PATH='/usr/bin:/bin' LC_ALL='C' LANG='C' \
     /usr/bin/curl \
@@ -600,6 +610,28 @@ downloaded_bytes="$({
 
 printf '%s  %s\n' "$EXPECTED_B64_SHA256" "$B64_PATH" | /usr/bin/sha256sum -c - >/dev/null ||
   die 'base64 package SHA-256 mismatch'
+
+downloaded_uninstaller_bytes="$({
+  /usr/bin/env -i PATH='/usr/bin:/bin' LC_ALL='C' LANG='C' \
+    /usr/bin/curl --disable --proto '=https' --proto-redir '=https' --tlsv1.2 \
+      --fail --silent --show-error --max-redirs 0 --connect-timeout 10 --max-time 30 \
+      --max-filesize "$EXPECTED_UNINSTALL_SCRIPT_BYTES" --output "$UNINSTALL_SCRIPT_SOURCE" \
+      --write-out '%{size_download}' "$BASE_URL/$UNINSTALL_SCRIPT_NAME"
+} 2>&1)" || die "uninstaller download failed: $downloaded_uninstaller_bytes"
+[[ "$downloaded_uninstaller_bytes" == "$EXPECTED_UNINSTALL_SCRIPT_BYTES" ]] ||
+  die 'uninstaller download byte count mismatch'
+[[ "$(file_size "$UNINSTALL_SCRIPT_SOURCE")" == "$EXPECTED_UNINSTALL_SCRIPT_BYTES" ]] ||
+  die 'uninstaller size readback mismatch'
+printf '%s  %s\n' "$EXPECTED_UNINSTALL_SCRIPT_SHA256" "$UNINSTALL_SCRIPT_SOURCE" |
+  /usr/bin/sha256sum -c - >/dev/null || die 'uninstaller SHA-256 mismatch'
+
+printf 'uninstaller_sha256=%s\nuninstaller_bytes=%s\n' \
+  "$EXPECTED_UNINSTALL_SCRIPT_SHA256" "$EXPECTED_UNINSTALL_SCRIPT_BYTES" \
+  >"$UNINSTALL_CONFIG_SOURCE" || die 'cannot create uninstall source metadata'
+[[ -f "$UNINSTALL_CONFIG_SOURCE" && ! -L "$UNINSTALL_CONFIG_SOURCE" ]] ||
+  die 'uninstall source metadata is unsafe'
+UNINSTALL_CONFIG_SHA256="$(/usr/bin/sha256sum -- "$UNINSTALL_CONFIG_SOURCE" | /usr/bin/awk '{print $1}')"
+[[ "$UNINSTALL_CONFIG_SHA256" =~ ^[0-9a-f]{64}$ ]] || die 'cannot hash uninstall source metadata'
 
 /usr/bin/timeout --signal=TERM --kill-after=2s 15s \
   /usr/bin/env -i PATH='/usr/bin:/bin' LC_ALL='C' LANG='C' \
@@ -681,6 +713,16 @@ for (( index=0; index < LIB_FILE_COUNT; index++ )); do
   INSTALL_EXPECTED_HASH[index]="$source_hash"
 done
 
+# These two root-only files make removal available from the installed menu.
+# The metadata is staged first, so an interrupted local-uninstaller stage is
+# never accepted without the exact expected hash and byte count.
+create_owned_stage_file "$UNINSTALL_CONFIG_SOURCE" \
+  "$TRANSACTION_LIB_DIR/uninstall-source-v1.conf" 0600 "$UNINSTALL_CONFIG_SHA256"
+UNINSTALL_CONFIG_CLAIM_INDEX="$LAST_CLAIM_INDEX"
+create_owned_stage_file "$UNINSTALL_SCRIPT_SOURCE" \
+  "$TRANSACTION_LIB_DIR/uninstall-server-toolkit-1.0.0.sh" 0700 "$EXPECTED_UNINSTALL_SCRIPT_SHA256"
+UNINSTALL_SCRIPT_CLAIM_INDEX="$LAST_CLAIM_INDEX"
+
 /bin/chmod 0755 "$TRANSACTION_LIB_DIR"
 claim_path_has_recorded_inode "$transaction_directory_claim_index" ||
   die 'transaction library directory inode changed before publication'
@@ -688,6 +730,10 @@ for (( index=0; index < LIB_FILE_COUNT; index++ )); do
   claim_path_has_recorded_inode "${INSTALL_CLAIM_INDEX[$index]}" ||
     die "library transaction inode changed before publication: ${INSTALL_TRANSACTION[$index]}"
 done
+claim_path_has_recorded_inode "$UNINSTALL_CONFIG_CLAIM_INDEX" ||
+  die 'uninstall source metadata inode changed before publication'
+claim_path_has_recorded_inode "$UNINSTALL_SCRIPT_CLAIM_INDEX" ||
+  die 'local uninstaller inode changed before publication'
 [[ "$(stat_identity "$TRANSACTION_LIB_DIR")" == '0:0:755:'* ]] || die 'complete transaction library directory identity mismatch'
 require_no_collision "$INSTALL_LIB_DIR"
 /usr/bin/env -i PATH='/usr/bin:/bin' HOME='/root' LC_ALL='C' LANG='C' TZ='UTC' \
@@ -713,6 +759,12 @@ for (( index=0; index < LIB_FILE_COUNT; index++ )); do
   verify_regular_file "$destination" "$mode" "$source_hash"
 done
 (( publication_claim_error == 0 )) || die 'one or more published library inode claims changed'
+move_owned_claim_to_path "$UNINSTALL_CONFIG_CLAIM_INDEX" "$INSTALLED_UNINSTALL_CONFIG" final-file ||
+  die 'published uninstall source metadata does not have the owned source inode'
+verify_regular_file "$INSTALLED_UNINSTALL_CONFIG" 0600 "$UNINSTALL_CONFIG_SHA256"
+move_owned_claim_to_path "$UNINSTALL_SCRIPT_CLAIM_INDEX" "$INSTALLED_UNINSTALL_SCRIPT" final-file ||
+  die 'published local uninstaller does not have the owned source inode'
+verify_regular_file "$INSTALLED_UNINSTALL_SCRIPT" 0700 "$EXPECTED_UNINSTALL_SCRIPT_SHA256"
 
 # Publish the four /usr/local/bin entries independently and atomically. The
 # user-facing launcher is index 29 and therefore remains strictly last.

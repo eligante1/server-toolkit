@@ -108,8 +108,13 @@ readonly SELF_SHA256
 
 readonly PRODUCT_VERSION='1.0.0'
 readonly INSTALL_LIB_DIR='/usr/local/lib/server-toolkit'
-readonly TRANSACTION_LIB_DIR='/usr/local/lib/.server-toolkit-txn-fda2b665753e'
+readonly TRANSACTION_LIB_DIR='/usr/local/lib/.server-toolkit-txn-3cdd28b08316'
 readonly MAIN_LAUNCHER='/usr/local/bin/server-toolkit'
+readonly PUBLIC_MENU_DISPATCHER='/usr/local/lib/server-toolkit/public-menu-dispatcher-v2.sh'
+readonly INSTALLED_UNINSTALL_SCRIPT='/usr/local/lib/server-toolkit/uninstall-server-toolkit-1.0.0.sh'
+readonly INSTALLED_UNINSTALL_CONFIG='/usr/local/lib/server-toolkit/uninstall-source-v1.conf'
+readonly TRANSACTION_UNINSTALL_SCRIPT='/usr/local/lib/.server-toolkit-txn-3cdd28b08316/uninstall-server-toolkit-1.0.0.sh'
+readonly TRANSACTION_UNINSTALL_CONFIG='/usr/local/lib/.server-toolkit-txn-3cdd28b08316/uninstall-source-v1.conf'
 readonly LIB_KNOWN_FIRST=3
 readonly LIB_KNOWN_LAST=28
 
@@ -147,48 +152,48 @@ readonly -a KNOWN_PATHS=(
 )
 
 readonly -a TRANSACTION_PATHS=(
-  '/usr/local/bin/.server-toolkit-txn-fda2b665753e-server-toolkit-audit-v1'
-  '/usr/local/bin/.server-toolkit-txn-fda2b665753e-server-toolkit-audit-v1.sha256'
-  '/usr/local/bin/.server-toolkit-txn-fda2b665753e-server-toolkit.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/server-toolkit-audit-v1.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/server-toolkit-audit-v1.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/public-menu-controller-v2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/public-menu-controller-v2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/public-menu-dispatcher-v2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/public-menu-dispatcher-v2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/sonar-presentation-0.4.1-rc4-round2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/sonar-presentation-0.4.1-rc4-round2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/server-toolkit-quick-v2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/server-toolkit-quick-v2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/server-toolkit-last-report-v2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/server-toolkit-last-report-v2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/progress-0.4.1-rc4-round2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/progress-0.4.1-rc4-round2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/platform-compatibility-0.4.1-rc4-round2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/platform-compatibility-0.4.1-rc4-round2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/pressure-diagnostics-0.4.1-rc4-round2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/pressure-diagnostics-0.4.1-rc4-round2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/storage-diagnostics-0.4.1-rc4-round2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/storage-diagnostics-0.4.1-rc4-round2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/application-service-diagnostics-0.4.1-rc4-round2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/application-service-diagnostics-0.4.1-rc4-round2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/failed-services-policy-0.4.1-rc4-round2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/failed-services-policy-0.4.1-rc4-round2.sh.sha256'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/quick-check-classifier-v2.sh'
-  '/usr/local/lib/.server-toolkit-txn-fda2b665753e/quick-check-classifier-v2.sh.sha256'
-  '/usr/local/bin/.server-toolkit-txn-fda2b665753e-server-toolkit'
+  '/usr/local/bin/.server-toolkit-txn-3cdd28b08316-server-toolkit-audit-v1'
+  '/usr/local/bin/.server-toolkit-txn-3cdd28b08316-server-toolkit-audit-v1.sha256'
+  '/usr/local/bin/.server-toolkit-txn-3cdd28b08316-server-toolkit.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/server-toolkit-audit-v1.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/server-toolkit-audit-v1.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/public-menu-controller-v2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/public-menu-controller-v2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/public-menu-dispatcher-v2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/public-menu-dispatcher-v2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/sonar-presentation-0.4.1-rc4-round2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/sonar-presentation-0.4.1-rc4-round2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/server-toolkit-quick-v2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/server-toolkit-quick-v2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/server-toolkit-last-report-v2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/server-toolkit-last-report-v2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/progress-0.4.1-rc4-round2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/progress-0.4.1-rc4-round2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/platform-compatibility-0.4.1-rc4-round2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/platform-compatibility-0.4.1-rc4-round2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/pressure-diagnostics-0.4.1-rc4-round2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/pressure-diagnostics-0.4.1-rc4-round2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/storage-diagnostics-0.4.1-rc4-round2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/storage-diagnostics-0.4.1-rc4-round2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/application-service-diagnostics-0.4.1-rc4-round2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/application-service-diagnostics-0.4.1-rc4-round2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/failed-services-policy-0.4.1-rc4-round2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/failed-services-policy-0.4.1-rc4-round2.sh.sha256'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/quick-check-classifier-v2.sh'
+  '/usr/local/lib/.server-toolkit-txn-3cdd28b08316/quick-check-classifier-v2.sh.sha256'
+  '/usr/local/bin/.server-toolkit-txn-3cdd28b08316-server-toolkit'
 )
 
 readonly -a KNOWN_HASHES=(
   '64172bba0387d931cbc0fd184f03e2ea8b36d6fe9363935837d5d83c8bfd79ea'
   'bd5b7cd5727ca41bad9966bb0c2cce5bbd51f9cee89859f8fdf3dae0c09b9e66'
-  '0c4cdae567dda2f290f8b0bd819854e4232b7c77a4aec0ab4343c56940f3d959'
+  '43e4ce4cd4f790d7dfab4f2649a06dfcb8a938cab4ea8e75c9d620880e07cf3a'
   '5b0d9db8deae0363afb8339281dd4aec1ddab1c5cd107e84fd2acd0263c4edfb'
   '8be76472ed53ac6d283121308f6c556dfa64aae74f09e67b3a9cde628ec2f39f'
-  '8c89e8b31c0d62c122ee823930083cb6ad30110bffb0c1811ec8c442d55a3320'
-  '5e25d1ea97b4d8927bfdd53bf8ddcdf6a5d2741975e62e1c4af68150fc84e5a3'
-  '2033fcf215ba4aabc2e77da9437548cb3c672d53f5aa3c55810bed8ac2220909'
-  '2e686fb7519f9c457bd599c4880535c0ef42f226abc43859c414379d963cae68'
+  '9969b66500891b894e74657a3b5accbde2901b4d883748b2e6726a5c0f8b027d'
+  '623a3d193f8a837a2a7517233b8d91d662b3d13b697f852d60c2dfcf626350da'
+  '867690e066673451058874873eed330c2b1b9338ee67601fc465000e8f3deee6'
+  '9312696b1f0266f64ab4500475e53706ab13aaccad9ca3e7d070137894999e5b'
   'c41d7f2e4f9e994ec1f14ca85121037be742ab07a3997e77f5cf473cb7bd110b'
   '6af249476191bd5ccd819ec8da3e481135bf3c7c4f6dcb61de9f739475ecacca'
   'e00f4d26a1dc49c414eeb1e008ab69db2f698304ba2f4cf21227a2352232de19'
@@ -209,7 +214,7 @@ readonly -a KNOWN_HASHES=(
   '1b7fe2dab5d412d665102b97652521b53c7018c30b7ea4a1773096cfac924d68'
   '758c56b85634b37c1297fc149ccc03f49fd3349ee4b50dd95a6f3f8737184afa'
   'b6b98c6564e32797ac6fc5a3f59a6815009f3f3d06b40f59de068598f40e47b7'
-  '32ba3bba0104e22f59b1026f6a131d26eec1dbb16a61f1c8eaeaae50943a8ed9'
+  'c19cc1df9d809c7f057c639ae97fd31501672c06e71225870c17e47765edc2c0'
 )
 
 readonly -a KNOWN_MODES=(
@@ -259,11 +264,53 @@ TRANSACTION_DIRECTORY_PRESENT=0
 TRANSACTION_DIRECTORY_FULL_IDENTITY=''
 FINAL_DIRECTORY_EXACT_CHILD_COUNT=0
 TRANSACTION_DIRECTORY_EXACT_CHILD_COUNT=0
+FINAL_SPECIAL_CONFIG_PRESENT=0
+FINAL_SPECIAL_CONFIG_IDENTITY=''
+FINAL_SPECIAL_CONFIG_HASH=''
+FINAL_SPECIAL_SCRIPT_PRESENT=0
+FINAL_SPECIAL_SCRIPT_IDENTITY=''
+FINAL_SPECIAL_SCRIPT_HASH=''
+TRANSACTION_SPECIAL_CONFIG_PRESENT=0
+TRANSACTION_SPECIAL_CONFIG_IDENTITY=''
+TRANSACTION_SPECIAL_CONFIG_HASH=''
+TRANSACTION_SPECIAL_SCRIPT_PRESENT=0
+TRANSACTION_SPECIAL_SCRIPT_IDENTITY=''
+TRANSACTION_SPECIAL_SCRIPT_HASH=''
+DELETE_REPORTS=0
+REPORT_ROOT='/var/server-toolkit'
+REPORT_ROOT_PRESENT=0
+REPORT_ROOT_FULL_IDENTITY=''
+REPORT_PARENT_IDENTITY=''
 
 die() {
   printf 'ERROR: %s\n' "$*" >&2
   exit 1
 }
+
+cleanup_self_bootstrap() {
+  local rc=$? current_parent='' current_self=''
+  trap - EXIT HUP INT TERM
+  set +e
+  current_parent="$(stat_full_identity "$SELF_PARENT" 2>/dev/null)"
+  current_self="$(stat_full_identity "$SELF_PATH" 2>/dev/null)"
+  if [[ "$current_parent" == "$SELF_PARENT_FULL_IDENTITY" &&
+        "$current_self" == "$SELF_FULL_IDENTITY" ]]; then
+    /bin/rm -f -- "$SELF_PATH" || rc=1
+    /bin/rmdir -- "$SELF_PARENT" || rc=1
+    [[ ! -e "$SELF_PARENT" && ! -L "$SELF_PARENT" ]] || rc=1
+  elif [[ ! -e "$SELF_PARENT" && ! -L "$SELF_PARENT" ]]; then
+    :
+  else
+    printf 'ERROR: preserving changed uninstaller bootstrap directory: %s\n' "$SELF_PARENT" >&2
+    rc=1
+  fi
+  exit "$rc"
+}
+
+trap cleanup_self_bootstrap EXIT
+trap 'exit 129' HUP
+trap 'exit 130' INT
+trap 'exit 143' TERM
 
 need_command() {
   command -v "$1" >/dev/null 2>&1 || die "required command not found: $1"
@@ -510,6 +557,8 @@ is_known_path() {
   for path in "${KNOWN_PATHS[@]}"; do
     [[ "$candidate" == "$path" ]] && return 0
   done
+  [[ "$candidate" == "$INSTALLED_UNINSTALL_CONFIG" ||
+     "$candidate" == "$INSTALLED_UNINSTALL_SCRIPT" ]] && return 0
   return 1
 }
 
@@ -519,7 +568,81 @@ is_transaction_path() {
   for path in "${TRANSACTION_PATHS[@]}"; do
     [[ "$candidate" == "$path" ]] && return 0
   done
+  [[ "$candidate" == "$TRANSACTION_UNINSTALL_CONFIG" ||
+     "$candidate" == "$TRANSACTION_UNINSTALL_SCRIPT" ]] && return 0
   return 1
+}
+
+record_uninstall_metadata_pair() {
+  local directory="$1" kind="$2" complete="$3"
+  local config="$directory/uninstall-source-v1.conf"
+  local script="$directory/uninstall-server-toolkit-1.0.0.sh"
+  local config_before config_after script_before script_after
+  local line key value count=0 expected_hash='' expected_bytes='' actual_hash
+
+  if [[ ! -e "$config" && ! -L "$config" && ! -e "$script" && ! -L "$script" ]]; then
+    [[ "$complete" == 0 ]] || die "complete $kind Toolkit directory lacks uninstall metadata"
+    return 0
+  fi
+  [[ -f "$config" && ! -L "$config" ]] ||
+    die "$kind uninstall metadata is missing or unsafe; preserving Toolkit installation"
+  config_before="$(stat_full_identity "$config")" || die "cannot record $kind uninstall metadata identity"
+  validate_known_file "$config" "$(/usr/bin/sha256sum -- "$config" | /usr/bin/awk '{print $1}')" 0600
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    count=$((count + 1))
+    [[ "$line" == *=* ]] || die "$kind uninstall metadata is malformed"
+    key="${line%%=*}"; value="${line#*=}"
+    case "$count:$key" in
+      1:uninstaller_sha256) expected_hash="$value" ;;
+      2:uninstaller_bytes) expected_bytes="$value" ;;
+      *) die "$kind uninstall metadata has unexpected content" ;;
+    esac
+  done <"$config"
+  (( count == 2 )) || die "$kind uninstall metadata is incomplete"
+  [[ "$expected_hash" =~ ^[0-9a-f]{64}$ ]] || die "$kind local uninstaller hash is invalid"
+  [[ "$expected_bytes" =~ ^[1-9][0-9]{4,5}$ ]] || die "$kind local uninstaller size is invalid"
+  (( expected_bytes <= 131072 )) || die "$kind local uninstaller size exceeds the safety cap"
+  config_after="$(stat_full_identity "$config")" || die "cannot recheck $kind uninstall metadata identity"
+  [[ "$config_after" == "$config_before" ]] || die "$kind uninstall metadata changed during validation"
+  actual_hash="$(/usr/bin/sha256sum -- "$config" | /usr/bin/awk '{print $1}')"
+
+  if [[ ! -e "$script" && ! -L "$script" ]]; then
+    [[ "$complete" == 0 ]] || die "complete $kind Toolkit directory lacks local uninstaller"
+    if [[ "$kind" == final ]]; then
+      FINAL_SPECIAL_CONFIG_PRESENT=1; FINAL_SPECIAL_CONFIG_IDENTITY="$config_before"; FINAL_SPECIAL_CONFIG_HASH="$actual_hash"
+    else
+      TRANSACTION_SPECIAL_CONFIG_PRESENT=1; TRANSACTION_SPECIAL_CONFIG_IDENTITY="$config_before"; TRANSACTION_SPECIAL_CONFIG_HASH="$actual_hash"
+    fi
+    return 0
+  fi
+  script_before="$(stat_full_identity "$script")" || die "cannot record $kind local uninstaller identity"
+  validate_known_file "$script" "$expected_hash" 0700
+  [[ "$(/usr/bin/stat -c '%s' -- "$script" 2>/dev/null)" == "$expected_bytes" ]] ||
+    die "$kind local uninstaller size changed"
+  script_after="$(stat_full_identity "$script")" || die "cannot recheck $kind local uninstaller identity"
+  [[ "$script_after" == "$script_before" ]] || die "$kind local uninstaller changed during validation"
+  if [[ "$kind" == final ]]; then
+    FINAL_SPECIAL_CONFIG_PRESENT=1; FINAL_SPECIAL_CONFIG_IDENTITY="$config_before"; FINAL_SPECIAL_CONFIG_HASH="$actual_hash"
+    FINAL_SPECIAL_SCRIPT_PRESENT=1; FINAL_SPECIAL_SCRIPT_IDENTITY="$script_before"; FINAL_SPECIAL_SCRIPT_HASH="$expected_hash"
+  else
+    TRANSACTION_SPECIAL_CONFIG_PRESENT=1; TRANSACTION_SPECIAL_CONFIG_IDENTITY="$config_before"; TRANSACTION_SPECIAL_CONFIG_HASH="$actual_hash"
+    TRANSACTION_SPECIAL_SCRIPT_PRESENT=1; TRANSACTION_SPECIAL_SCRIPT_IDENTITY="$script_before"; TRANSACTION_SPECIAL_SCRIPT_HASH="$expected_hash"
+  fi
+}
+
+remove_uninstall_metadata_pair() {
+  local kind="$1"
+  if [[ "$kind" == final ]]; then
+    remove_validated_file "$INSTALLED_UNINSTALL_SCRIPT" "$FINAL_SPECIAL_SCRIPT_PRESENT" \
+      "$FINAL_SPECIAL_SCRIPT_IDENTITY" exact "$FINAL_SPECIAL_SCRIPT_HASH" 0700
+    remove_validated_file "$INSTALLED_UNINSTALL_CONFIG" "$FINAL_SPECIAL_CONFIG_PRESENT" \
+      "$FINAL_SPECIAL_CONFIG_IDENTITY" exact "$FINAL_SPECIAL_CONFIG_HASH" 0600
+  else
+    remove_validated_file "$TRANSACTION_UNINSTALL_SCRIPT" "$TRANSACTION_SPECIAL_SCRIPT_PRESENT" \
+      "$TRANSACTION_SPECIAL_SCRIPT_IDENTITY" exact "$TRANSACTION_SPECIAL_SCRIPT_HASH" 0700
+    remove_validated_file "$TRANSACTION_UNINSTALL_CONFIG" "$TRANSACTION_SPECIAL_CONFIG_PRESENT" \
+      "$TRANSACTION_SPECIAL_CONFIG_IDENTITY" exact "$TRANSACTION_SPECIAL_CONFIG_HASH" 0600
+  fi
 }
 
 assert_no_unknown_directory_entries() {
@@ -830,6 +953,16 @@ command_string_is_proven_unrelated() {
   esac
 }
 
+process_is_exact_uninstall_sudo_parent() {
+  local exe="$1"
+  [[ "$exe" == '/usr/bin/sudo' ]] || return 1
+  (( ${#argv[@]} == 5 )) || return 1
+  [[ "${argv[0]}" == '/usr/bin/sudo' &&
+     "${argv[1]}" == '-n' && "${argv[2]}" == '--' &&
+     "${argv[3]}" == "$PUBLIC_MENU_DISPATCHER" &&
+     ( "${argv[4]}" == uninstall || "${argv[4]}" == uninstall-purge-reports ) ]]
+}
+
 scan_one_process() {
   local pid="$1"
   local before state kthread exe cwd matched=0 arg exe_base shell_script_operand='' shell_command_string=''
@@ -890,6 +1023,14 @@ scan_one_process() {
     die "stable process cwd is unreadable for PID $pid"
   }
   cwd="${cwd% (deleted)}"
+
+  # A non-root menu request execs sudo, so the only cooperating parent that
+  # may remain is this exact literal handoff. It cannot launch any backend
+  # other than the already-running uninstaller transaction.
+  if process_is_exact_uninstall_sudo_parent "$exe"; then
+    require_process_stable_or_vanished "$pid" "$before" || return 0
+    return 0
+  fi
 
   if candidate_resolves_to_toolkit "$exe" "$cwd"; then
     matched=1
@@ -1009,14 +1150,37 @@ done
   die 'internal safety invariant failed: main launcher inventory mismatch'
 
 if (( $# == 1 )) && [[ "$1" == '--internal-proc-scan' ]]; then
+  # The scanner is a child of the real uninstaller and must never clean the
+  # parent-owned bootstrap directory when its read-only process scan exits.
+  trap - EXIT HUP INT TERM
   run_internal_proc_scan
   exit 0
 fi
-(( $# == 0 )) || die 'usage: uninstall-server-toolkit-1.0.0.sh'
+if (( $# == 1 )) && [[ "$1" == '--delete-reports' ]]; then
+  DELETE_REPORTS=1
+elif (( $# != 0 )); then
+  die 'usage: uninstall-server-toolkit-1.0.0.sh [--delete-reports]'
+fi
 
 for path in / /usr /usr/local /usr/local/bin /usr/local/lib; do
   require_trusted_directory "$path"
 done
+
+if (( DELETE_REPORTS == 1 )); then
+  require_trusted_directory /var
+  REPORT_PARENT_IDENTITY="$(stat_full_identity /var)" || die 'cannot record /var identity before report deletion'
+  if [[ -L "$REPORT_ROOT" || ( -e "$REPORT_ROOT" && ! -d "$REPORT_ROOT" ) ]]; then
+    die "report root is not an ordinary directory; preserving it: $REPORT_ROOT"
+  fi
+  if [[ -d "$REPORT_ROOT" ]]; then
+    require_trusted_directory "$REPORT_ROOT"
+    REPORT_ROOT_PRESENT=1
+    REPORT_ROOT_FULL_IDENTITY="$(stat_full_identity "$REPORT_ROOT")" ||
+      die 'cannot record report-root identity before deletion'
+    [[ "${REPORT_ROOT_FULL_IDENTITY%%:*}" == "${REPORT_PARENT_IDENTITY%%:*}" ]] ||
+      die "report root is a separate filesystem or mount; preserving it for manual removal: $REPORT_ROOT"
+  fi
+fi
 
 exec 9</usr/local/lib
 /usr/bin/flock --exclusive --timeout 5 9 || die 'another Server Toolkit install/uninstall transaction holds the coordination lock'
@@ -1061,6 +1225,8 @@ fi
 
 assert_no_unknown_directory_entries "$INSTALL_LIB_DIR" final
 assert_no_unknown_directory_entries "$TRANSACTION_LIB_DIR" transaction
+record_uninstall_metadata_pair "$INSTALL_LIB_DIR" final "$([[ "$final_directory_mode" == 755 ]] && printf 1 || printf 0)"
+record_uninstall_metadata_pair "$TRANSACTION_LIB_DIR" transaction "$([[ "$transaction_directory_mode" == 755 ]] && printf 1 || printf 0)"
 
 # Validate the complete present subset before deleting anything. This makes an
 # interrupted installation removable without accepting modified or foreign data.
@@ -1109,6 +1275,8 @@ remove_validated_known_index "$launcher_last_index"
 remove_validated_known_index 0
 remove_validated_transaction_index "$launcher_last_index"
 remove_validated_transaction_index 0
+remove_uninstall_metadata_pair final
+remove_uninstall_metadata_pair transaction
 assert_no_active_toolkit_processes
 
 for index in "${!KNOWN_PATHS[@]}"; do
@@ -1132,8 +1300,31 @@ fi
 require_recorded_parent_identity /usr/local/lib "$LIB_PARENT_IDENTITY" 1
 
 assert_no_active_toolkit_processes
-for path in "${KNOWN_PATHS[@]}" "${TRANSACTION_PATHS[@]}"; do
+for path in "${KNOWN_PATHS[@]}" "${TRANSACTION_PATHS[@]}" \
+  "$INSTALLED_UNINSTALL_SCRIPT" "$INSTALLED_UNINSTALL_CONFIG" \
+  "$TRANSACTION_UNINSTALL_SCRIPT" "$TRANSACTION_UNINSTALL_CONFIG"; do
   [[ ! -e "$path" && ! -L "$path" ]] || die "Toolkit path remains after removal: $path"
 done
 
-printf 'Server Toolkit %s installation removed.\n' "$PRODUCT_VERSION"
+if (( DELETE_REPORTS == 1 )); then
+  require_recorded_parent_identity /var "$REPORT_PARENT_IDENTITY"
+  if (( REPORT_ROOT_PRESENT == 1 )); then
+    [[ -d "$REPORT_ROOT" && ! -L "$REPORT_ROOT" ]] ||
+      die "report root changed before deletion; preserving it: $REPORT_ROOT"
+    [[ "$(stat_full_identity "$REPORT_ROOT")" == "$REPORT_ROOT_FULL_IDENTITY" ]] ||
+      die "report-root inode changed before deletion; preserving it: $REPORT_ROOT"
+    require_trusted_directory "$REPORT_ROOT"
+    /bin/rm -rf --one-file-system -- "$REPORT_ROOT" ||
+      die "could not remove report root completely: $REPORT_ROOT"
+  fi
+  [[ ! -e "$REPORT_ROOT" && ! -L "$REPORT_ROOT" ]] ||
+    die "report root remains after requested deletion: $REPORT_ROOT"
+  require_recorded_parent_identity /var "$REPORT_PARENT_IDENTITY" 1
+fi
+
+printf 'Server Toolkit %s удалён.\n' "$PRODUCT_VERSION"
+if (( DELETE_REPORTS == 1 )); then
+  printf 'Отчёты удалены: /var/server-toolkit\n'
+else
+  printf 'Отчёты сохранены: /var/server-toolkit\n'
+fi

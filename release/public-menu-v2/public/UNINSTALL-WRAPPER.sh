@@ -9,14 +9,48 @@ umask 077
 cd /
 
 [[ "$(/usr/bin/id -u)" == '0' ]] || { printf 'ERROR: root required.\n' >&2; exit 1; }
-(( $# == 1 )) || { printf 'ERROR: usage: UNINSTALL-WRAPPER.sh <immutable raw GitHub commit base URL>.\n' >&2; exit 78; }
+(( $# >= 1 && $# <= 3 )) || { printf 'ERROR: usage: UNINSTALL-WRAPPER.sh <immutable raw GitHub commit base URL> [--self-clean-parent] [--delete-reports].\n' >&2; exit 78; }
 readonly BASE="$1"
+shift
+self_clean_requested=0
+delete_reports_requested=0
+for option in "$@"; do
+  case "$option" in
+    --self-clean-parent)
+      (( self_clean_requested == 0 )) || exit 78
+      self_clean_requested=1
+      ;;
+    --delete-reports)
+      (( delete_reports_requested == 0 )) || exit 78
+      delete_reports_requested=1
+      ;;
+    *) exit 78 ;;
+  esac
+done
+readonly SELF_CLEAN_REQUESTED="$self_clean_requested"
+readonly DELETE_REPORTS_REQUESTED="$delete_reports_requested"
 [[ "$BASE" =~ ^https://raw\.githubusercontent\.com/eligante1/server-toolkit/[0-9a-f]{40}/release/public-menu-v2/public$ ]] || {
   printf 'ERROR: publication URL is not an immutable reviewed raw GitHub commit URL.\n' >&2
   exit 78
 }
 bootstrap_dir=''
 bootstrap_key=''
+self_clean_parent=''
+self_clean_parent_key=''
+self_clean_path=''
+self_clean_key=''
+
+if (( SELF_CLEAN_REQUESTED == 1 )); then
+  self_clean_path="$0"
+  self_clean_parent="${self_clean_path%/*}"
+  [[ "$self_clean_path" == "$self_clean_parent/UNINSTALL-WRAPPER.sh" &&
+     "$self_clean_parent" =~ ^/root/\.server-toolkit-bootstrap\.[A-Za-z0-9]{6}$ ]] || exit 78
+  [[ -d "$self_clean_parent" && ! -L "$self_clean_parent" &&
+     -f "$self_clean_path" && ! -L "$self_clean_path" ]] || exit 78
+  self_clean_parent_key="$(/usr/bin/stat -c '%d:%i:%u:%g:%a' -- "$self_clean_parent")"
+  self_clean_key="$(/usr/bin/stat -c '%d:%i:%u:%g:%a:%h' -- "$self_clean_path")"
+  [[ "$self_clean_parent_key" == *':0:0:700' && "$self_clean_key" == *':0:0:700:1' ]] || exit 78
+fi
 
 cleanup() {
   local rc=$?
@@ -25,11 +59,25 @@ cleanup() {
   set +e
   if [[ -n "$bootstrap_dir" ]]; then
     current="$(/usr/bin/stat -c '%d:%i:%u:%g:%a' -- "$bootstrap_dir" 2>/dev/null)"
-    if [[ -d "$bootstrap_dir" && ! -L "$bootstrap_dir" && "$current" == "$bootstrap_key:0:0:700" ]]; then
+    if [[ ! -e "$bootstrap_dir" && ! -L "$bootstrap_dir" ]]; then
+      :
+    elif [[ -d "$bootstrap_dir" && ! -L "$bootstrap_dir" && "$current" == "$bootstrap_key:0:0:700" ]]; then
       /bin/rm -rf --one-file-system -- "$bootstrap_dir"
       [[ ! -e "$bootstrap_dir" && ! -L "$bootstrap_dir" ]] || rc=1
     else
       printf 'ERROR: preserving changed bootstrap directory.\n' >&2
+      rc=1
+    fi
+  fi
+  if [[ -n "$self_clean_parent" ]]; then
+    current="$(/usr/bin/stat -c '%d:%i:%u:%g:%a:%h' -- "$self_clean_path" 2>/dev/null)"
+    if [[ "$current" == "$self_clean_key" &&
+          "$(/usr/bin/stat -c '%d:%i:%u:%g:%a' -- "$self_clean_parent" 2>/dev/null)" == "$self_clean_parent_key" ]]; then
+      /bin/rm -f -- "$self_clean_path" || rc=1
+      /bin/rmdir -- "$self_clean_parent" || rc=1
+      [[ ! -e "$self_clean_parent" && ! -L "$self_clean_parent" ]] || rc=1
+    else
+      printf 'ERROR: preserving changed uninstall handoff directory.\n' >&2
       rc=1
     fi
   fi
@@ -56,23 +104,29 @@ readonly script="$bootstrap_dir/uninstall-server-toolkit-1.0.0.sh"
 /usr/bin/env -i PATH='/usr/bin:/bin' HOME='/root' LANG='C' LC_ALL='C' TZ='UTC' \
   /usr/bin/curl --disable --proto '=https' --proto-redir '=https' --tlsv1.2 \
   --fail --silent --show-error --max-redirs 0 --connect-timeout 10 --max-time 30 \
-  --max-filesize 46877 --output "$script" "$BASE/uninstall-server-toolkit-1.0.0.sh"
-[[ "$(/usr/bin/stat -c '%u:%g:%a:%h:%s' -- "$script")" == '0:0:600:1:46877' ]] || exit 1
-printf '%s  %s\n' '1803bbf49bf3d5aca8a29f05bab294ae47e2d8233d0512aa9c02dac53252c0df' "$script" | /usr/bin/sha256sum -c -
+  --max-filesize 56548 --output "$script" "$BASE/uninstall-server-toolkit-1.0.0.sh"
+[[ "$(/usr/bin/stat -c '%u:%g:%a:%h:%s' -- "$script")" == '0:0:600:1:56548' ]] || exit 1
+printf '%s  %s\n' 'd95de1ff70bef633c32ce16d7ebb2a74e7c92b58387cdf012f471111e524e98b' "$script" | /usr/bin/sha256sum -c -
 /bin/chown root:root "$script"
 /bin/chmod 0700 "$script"
-[[ "$(/usr/bin/stat -c '%u:%g:%a:%h:%s' -- "$script")" == '0:0:700:1:46877' ]] || exit 1
+[[ "$(/usr/bin/stat -c '%u:%g:%a:%h:%s' -- "$script")" == '0:0:700:1:56548' ]] || exit 1
 
 set +e
-/usr/bin/timeout --signal=TERM --kill-after=5s 180s \
-  /usr/bin/env -i PATH='/usr/bin:/bin' HOME='/root' LANG='C' LC_ALL='C' TZ='UTC' PWD='/' \
-  /bin/bash -p -- "$script"
+if (( DELETE_REPORTS_REQUESTED == 1 )); then
+  /usr/bin/timeout --signal=TERM --kill-after=5s 180s \
+    /usr/bin/env -i PATH='/usr/bin:/bin' HOME='/root' LANG='C' LC_ALL='C' TZ='UTC' PWD='/' \
+    /bin/bash -p -- "$script" --delete-reports
+else
+  /usr/bin/timeout --signal=TERM --kill-after=5s 180s \
+    /usr/bin/env -i PATH='/usr/bin:/bin' HOME='/root' LANG='C' LC_ALL='C' TZ='UTC' PWD='/' \
+    /bin/bash -p -- "$script"
+fi
 rc=$?
 if [[ ! -x /usr/bin/pgrep ]]; then
   printf 'ERROR: pgrep is unavailable.\n' >&2
   rc=1
 else
-  /usr/bin/pgrep -f -- "$bootstrap_dir|/usr/local/bin/server-toolkit|/usr/local/bin/server-toolkit-audit-v1|/usr/local/lib/server-toolkit|/usr/local/lib/\.server-toolkit-txn-fda2b665753e|/usr/local/bin/\.server-toolkit-txn-fda2b665753e" >/dev/null 2>&1
+  /usr/bin/pgrep -f -- "$bootstrap_dir|/usr/local/bin/server-toolkit|/usr/local/bin/server-toolkit-audit-v1|/usr/local/lib/server-toolkit|/usr/local/lib/\.server-toolkit-txn-3cdd28b08316|/usr/local/bin/\.server-toolkit-txn-3cdd28b08316" >/dev/null 2>&1
   pgrep_rc=$?
   case "$pgrep_rc" in
     0) printf 'ERROR: uninstaller process residue detected.\n' >&2; rc=1 ;;
@@ -89,15 +143,21 @@ if (( rc == 0 )); then
     /usr/local/bin/server-toolkit.sha256 \
     /usr/local/bin/server-toolkit-audit-v1.sha256 \
     /usr/local/lib/server-toolkit \
-    /usr/local/lib/.server-toolkit-txn-fda2b665753e \
-    /usr/local/bin/.server-toolkit-txn-fda2b665753e-server-toolkit \
-    /usr/local/bin/.server-toolkit-txn-fda2b665753e-server-toolkit-audit-v1 \
-    /usr/local/bin/.server-toolkit-txn-fda2b665753e-server-toolkit.sha256 \
-    /usr/local/bin/.server-toolkit-txn-fda2b665753e-server-toolkit-audit-v1.sha256; do
+    /usr/local/lib/.server-toolkit-txn-3cdd28b08316 \
+    /usr/local/bin/.server-toolkit-txn-3cdd28b08316-server-toolkit \
+    /usr/local/bin/.server-toolkit-txn-3cdd28b08316-server-toolkit-audit-v1 \
+    /usr/local/bin/.server-toolkit-txn-3cdd28b08316-server-toolkit.sha256 \
+    /usr/local/bin/.server-toolkit-txn-3cdd28b08316-server-toolkit-audit-v1.sha256; do
     if [[ -e "$path" || -L "$path" ]]; then
       printf 'ERROR: Toolkit residue remains: %s\n' "$path" >&2
       rc=1
     fi
   done
+fi
+if (( rc == 0 && DELETE_REPORTS_REQUESTED == 1 )); then
+  if [[ -e /var/server-toolkit || -L /var/server-toolkit ]]; then
+    printf 'ERROR: requested report deletion is incomplete: /var/server-toolkit\n' >&2
+    rc=1
+  fi
 fi
 exit "$rc"
